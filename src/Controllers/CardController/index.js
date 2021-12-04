@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectId
 
 async function displayInitialDeck(req, res){
     const processedArray = idProcessor(getBaseDeckIds())
-    const db = await connectToDatabase('cardGameAPI')
+    const db = await connectToDatabase('cardGame')
     const collection = db.collection('baseSet')
     const deck = await collection.find({_id: {$in: processedArray}}).toArray()
     res.json(deck)
@@ -13,7 +13,7 @@ async function displayInitialDeck(req, res){
 
 async function displayMagicMan(req, res){
     const magicManId = ObjectId('61aa2c504b4d2d7ae4202286')
-    const db = await connectToDatabase('cardGameAPI')
+    const db = await connectToDatabase('cardGame')
     const collection = db.collection('baseSet')
     const deck = await collection.findOne({_id: magicManId})
     res.json(deck)

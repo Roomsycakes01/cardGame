@@ -6,5 +6,4 @@ async function connectToDatabase(dbName){
     return connection.db(dbName)
 }
 
-
 module.exports = connectToDatabase
