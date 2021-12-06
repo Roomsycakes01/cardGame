@@ -12,10 +12,10 @@ async function displayInitialDeck(req, res){
 }
 
 async function displayMagicMan(req, res){
-    const magicManId = ObjectId('61aa2c504b4d2d7ae4202286')
+    const explorerId = ObjectId('61aa2c504b4d2d7ae4202286')
     const db = await connectToDatabase('cardGame')
     const collection = db.collection('baseSet')
-    const deck = await collection.findOne({_id: magicManId})
+    const deck = await collection.findOne({_id: explorerId})
     res.json(deck)
 }
 
